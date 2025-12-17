@@ -3,7 +3,7 @@ class Solution {
         List<List<Integer>> pascal = new ArrayList();
         for(int i=0;i<numRows;i++){
             List<Integer> row = new ArrayList();
-            for(int j=0;j<=i;j++){
+            for(int j=0;j<i+1;j++){
                 if(j==0||j==i){
                     row.add(1);
                 }
