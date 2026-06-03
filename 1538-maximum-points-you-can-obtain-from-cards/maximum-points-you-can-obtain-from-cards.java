@@ -8,8 +8,8 @@ class Solution {
         maxi=sum;
         while(l>=0){
             sum-= c[l];
-            sum+=c[r];
             l--;
+            sum+=c[r];
             r--;
             maxi=Math.max(maxi,sum);
         }
