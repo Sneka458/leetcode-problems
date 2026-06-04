@@ -14,8 +14,8 @@ class Solution {
         ListNode ptr = head;
         ListNode temp = head;
         // Move ptr forward n times to create the gap
-        int i = 1;
-        while (i <= n) {
+        int i = 0;
+        while (i < n) {
             ptr = ptr.next; 
             i++;
         }
