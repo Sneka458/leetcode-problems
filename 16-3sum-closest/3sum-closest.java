@@ -1,22 +1,27 @@
+//3sum Closet
+
 class Solution {
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
-        int result=nums[0]+nums[2]+nums[1];
-        int diff=Integer.MAX_VALUE;
-        for(int i=0;i<nums.length-2;i++){
-            int l=i+1,r=nums.length-1;
-            while(l<r){
-                int sum=nums[i]+nums[l]+nums[r];
-                if(sum==target) return target;
-                else if(sum>target) r--;
-                else l++;
-                int ans=Math.abs(sum-target);
-                if(ans<diff){
-                    result=sum;
-                    diff=ans;
+        int sum = 0;
+        int sum1 = nums[0] + nums[1] + nums[2];
+        for (int i = 0; i < nums.length - 2; i++) {
+            int left = i + 1;
+            int right = nums.length - 1;
+            while (left < right) {
+                sum = nums[i] + nums[left] + nums[right];
+                if (Math.abs(target - sum) < Math.abs(target - sum1)) {
+                    sum1 = sum;
+                }
+                if (sum == target) {
+                    return sum;
+                } else if (sum < target) {
+                    left++;
+                } else {
+                    right--;
                 }
             }
         }
-        return result;
+        return sum1;
     }
 }
